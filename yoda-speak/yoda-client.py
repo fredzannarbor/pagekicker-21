@@ -17,7 +17,7 @@ wallet = Wallet()
 requests = BitTransferRequests(wallet)
 
 # server address
-server_url = 'http://localhost:5000/'
+server_url = 'http://localhost:5001/'
 
 def buy_yoda(sentence):
 

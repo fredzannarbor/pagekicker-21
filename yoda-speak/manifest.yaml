@@ -10,7 +10,7 @@ info:
   contact:
     name: PageKicker      
     email: fred@pagekicker.com
-host: http://10.244.34.64:5000
+host: http://10.244.44.99:5001
 schemes:
   - http
 basePath: /
