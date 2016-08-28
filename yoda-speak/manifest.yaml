@@ -1,7 +1,7 @@
 info:
   title: "Yoda Speaks"
   description: "Submit a sentence, return it will in Yoda speak."
-  x-21-quick-buy: '21 buy http://10.244.34.64:5000/buy'
+  x-21-quick-buy: '21 buy http://10.244.44.99:5001/buy'
   x-21-category: entertainment
   x-21-app-image:
   x-21-total-price:
