@@ -3,7 +3,7 @@ info:
   description: "Submit a sentence, return it will in Yoda speak."
   x-21-quick-buy: '21 buy http://10.244.44.99:5001/buy?sentence="These fish are tasty."'
   x-21-category: entertainment
-  x-21-app-image: https://cdn.filepicker.io/api/file/7k0MBQz1R72w5399zAbQ
+  x-21-app-image: https://cdn.filepicker.io/api/file/csmHaVJESA6rlwYwP1tq
   x-21-total-price:
     min: 2750
     max: 2750
