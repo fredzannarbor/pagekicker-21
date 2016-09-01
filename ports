@@ -1,0 +1,14 @@
+# these ports need to be open for current roster of apps
+# make sure they are open on cloud provider
+# currently port assignment is done manually in the last line of *server.py
+5000
+5001
+5002
+5003
+6002
+6016
+7016
+8016
+9016
+10016
+11016
