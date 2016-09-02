@@ -17,7 +17,7 @@ from two1.bitserv.flask import Payment
 from revE16 import RevE16
 
 app = Flask(__name__)
-app.debug = True
+# app.debug = True
 
 # setup wallet
 wallet = Wallet()
