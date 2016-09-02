@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
 import subprocess
-
+import json
+import yaml
 from flask import Flask
 
 
@@ -17,9 +18,9 @@ payment = Payment(app, wallet)
 @payment.required(1000)
 def buy_fortune():
 
-    fortune = subprocess.check_output(['fortune', 'potterfacts'])
+    fortune = subprocess.check_output(['fortune', 'wizardfacts'])
     return fortune
-    
+
 @app.route('/manifest')
 def docs():
     '''
