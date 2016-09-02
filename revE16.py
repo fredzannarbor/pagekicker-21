@@ -35,6 +35,8 @@ class RevE16:
         current_day = datetime.fromtimestamp(logs[0]["date"])
         day_rev = 0
         day_transactions = 0
+        total_rev = 0
+        total_transactions = 0
 
         # Iterate over the logs until we hit the number of days we want
         for entry in logs:
@@ -49,6 +51,8 @@ class RevE16:
                     break
 
                 # Save off days data and reset vars
+                total_rev = total_rev + day_rev
+                total_transactions = total_transactions + day_transactions
                 days_info.append({"day": current_day.strftime('%Y-%m-%d'), "revenue": day_rev, "num_transactions": day_transactions})
                 day_rev = 0
                 day_transactions = 0
@@ -68,7 +72,8 @@ class RevE16:
             day_transactions = day_transactions + 1
             day_rev = day_rev + entry["amount"]
 
-        return days_info
+        ret = {"totalRevenue": total_rev, "totalTransactions": total_transactions, "dailyStats": days_info}
+        return ret
 
     def _filter_rollbacks(self, logs):
         # due to the payout schedule, it is guaranteed that a rollback debit is preceded by a
