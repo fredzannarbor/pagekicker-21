@@ -35,7 +35,7 @@ if __name__ == '__main__':
 
     @click.command()
     @click.option("-h", "--host", default="localhost", help="21 Node running RevE16 to gather stats from.")
-    @click.option("-w", "--website", default="http://www.esixteen.co", help="Website to upload results to.")
+    @click.option("-w", "--website", default="https://www.esixteen.co", help="Website to upload results to.")
     @click.option("-d", "--days", default=1, help="Number of days to gather stats for.")
     @click.option("-l", "--log", default="INFO", help="Logging level to use (DEBUG, INFO, WARNING, ERROR, CRITICAL)")
     def run(host, website, days, log):
