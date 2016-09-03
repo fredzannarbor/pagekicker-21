@@ -1,6 +1,6 @@
 info:
   title: "NeverTrump"
-  description: "Remind yourself of all the reasons why Donald Trump should never be President of the United States. To create an alias for nevertrump, execute this command in the bash shell: alias nevertrump='21 buy http://10.244.44.99:5004/buy'. To make this alias persist across logins, add to your ~/.bashrc file."
+  description: "Remind yourself of all the reasons why Donald Trump should never be President of the United States."
   x-21-quick-buy: '21 buy http://10.244.44.99:5004/buy'
   x-21-category: entertainment
   x-21-app-image: https://cdn.filepicker.io/api/file/HObkvUjgQbiV65V1923O
@@ -11,6 +11,10 @@ info:
    - politics
    - entertainment
    - trivia
+  x-21-usage:  |
+     To create an alias for nevertrump, execute this command in the bash shell:
+     alias nevertrump='21 buy http://10.244.44.99:5004/buy' You can save it across logins by
+     adding that line to your ~/.bashrc file.
   contact:
     name: Fred Zimmerman        
     email: fred@pagekicker.com
