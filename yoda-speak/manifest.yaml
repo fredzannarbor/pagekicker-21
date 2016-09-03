@@ -7,6 +7,10 @@ info:
   x-21-total-price:
     min: 2750
     max: 2750
+  x-21-keywords:
+   - movies
+   - Star Wars
+   - jokes
   contact:
     name: PageKicker      
     email: fred@pagekicker.com

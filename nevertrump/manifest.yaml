@@ -1,0 +1,21 @@
+info:
+  title: "#NeverTrump"
+  description: "Remind yourself of all the reasons why Donald Trump should never be President of the United States."
+  x-21-quick-buy: '21 buy http://10.244.44.99:5004/buy'
+  x-21-category: entertainment
+  x-21-app-image:
+  x-21-total-price:
+    min: 2000
+    max: 2000
+  x-21-keywords:
+   - politics
+   - entertainment
+   - trivia
+  contact:
+    name: Fred Zimmerman        
+    email: fred@pagekicker.com
+host: 10.244.44.99:5004
+schemes:
+  - http
+basePath: /
+x-21-manifest-path: /manifest

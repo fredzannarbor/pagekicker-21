@@ -15,10 +15,10 @@ payment = Payment(app, wallet)
 
 # machine-payable endpoint that returns fortune if payment made
 @app.route('/buy')
-@payment.required(1000)
+@payment.required(2000)
 def buy_fortune():
 
-    fortune = subprocess.check_output(['fortune', 'wizardfacts'])
+    fortune = subprocess.check_output(['fortune', 'nevertrump'])
     return fortune
 
 @app.route('/manifest')
@@ -31,4 +31,4 @@ def docs():
     return json.dumps(manifest_yaml)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port=5004)
