@@ -1,0 +1,5 @@
+#!/bin/bash
+# test buys using 21 network
+21 buy http://10.244.44.99:5004/buy #nevertrump
+21 buy http://10.244.44.99:5001/buy?sentence="These fish are tasty." #yoda
+21 buy http://10.244.44.99:5003/buy # wizardfacts
