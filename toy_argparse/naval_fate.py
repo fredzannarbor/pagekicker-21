@@ -1,7 +1,6 @@
 """Naval Fate.
 
-Usage:
-  naval_fate.py ship new <name>...
+Usage:.
   naval_fate.py ship <name> [--speed=<kn>]
   naval_fate.py (-h | --help)
   naval_fate.py --version
