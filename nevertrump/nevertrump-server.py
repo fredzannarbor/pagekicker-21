@@ -4,6 +4,7 @@ import subprocess
 import json
 import yaml
 from flask import Flask
+import os
 
 
 from two1.wallet import Wallet
@@ -31,4 +32,29 @@ def docs():
     return json.dumps(manifest_yaml)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5004)
+    import click
+
+    @click.command()
+    @click.option("-d", "--daemon", default=False, is_flag=True,
+                  help="Run in daemon mode.")
+    def run(daemon):
+        if daemon:
+            pid_file = './nevertrump.pid'
+            if os.path.isfile(pid_file):
+                pid = int(open(pid_file).read())
+                os.remove(pid_file)
+                try:
+                    p = psutil.Process(pid)
+                    p.terminate()
+                except:
+                    pass
+            try:
+                p = subprocess.Popen(['python3', 'nevertrump-server.py'])
+                open(pid_file, 'w').write(str(p.pid))
+            except subprocess.CalledProcessError:
+                raise ValueError("error starting nevertrump-server.py daemon")
+        else:
+            print("nevertrump server running...")
+            app.run(host='0.0.0.0', port=5004)
+
+    run()
