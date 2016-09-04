@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+import os
 import subprocess
 import yaml
 import json
@@ -32,5 +32,29 @@ def docs():
     return json.dumps(manifest_yaml)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5001)
+    import click
 
+    @click.command()
+    @click.option("-d", "--daemon", default=False, is_flag=True,
+                  help="Run in daemon mode.")
+    def run(daemon):
+        if daemon:
+            pid_file = './yoda.pid'
+            if os.path.isfile(pid_file):
+                pid = int(open(pid_file).read())
+                os.remove(pid_file)
+                try:
+                    p = psutil.Process(pid)
+                    p.terminate()
+                except:
+                    pass
+            try:
+                p = subprocess.Popen(['python3', 'yoda-server.py'])
+                open(pid_file, 'w').write(str(p.pid))
+            except subprocess.CalledProcessError:
+                raise ValueError("error starting yoda-server.py daemon")
+        else:
+            print("Yoda server running...")
+            app.run(host='0.0.0.0', port=5001)
+
+    run()
