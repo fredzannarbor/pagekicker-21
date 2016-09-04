@@ -2,15 +2,16 @@
 
 Usage:
   naval_fate.py ship new <name>...
-  naval_fate.py ship <name> move <x> <y> [--speed=<kn>]
-  naval_fate.py ship shoot <x> <y>
+  naval_fate.py ship <name> [--speed=<kn>]
   naval_fate.py (-h | --help)
   naval_fate.py --version
+
 
 Options:
   -h --help     Show this screen.
   --version     Show version.
   --speed=<kn>  Speed in knots [default: 10].
+  --uuid=VALUE
 
 """
 from docopt import docopt
