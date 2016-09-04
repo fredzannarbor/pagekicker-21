@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 
+import os
 import subprocess
 import json
 import yaml
 from flask import Flask
-import os
 
 
 from two1.wallet import Wallet
@@ -16,10 +16,10 @@ payment = Payment(app, wallet)
 
 # machine-payable endpoint that returns fortune if payment made
 @app.route('/buy')
-@payment.required(2000)
+@payment.required(1000)
 def buy_fortune():
 
-    fortune = subprocess.check_output(['fortune', 'nevertrump'])
+    fortune = subprocess.check_output(['fortune', 'wizardfacts'])
     return fortune
 
 @app.route('/manifest')
@@ -39,7 +39,7 @@ if __name__ == '__main__':
                   help="Run in daemon mode.")
     def run(daemon):
         if daemon:
-            pid_file = './nevertrump.pid'
+            pid_file = './wizardfacts.pid'
             if os.path.isfile(pid_file):
                 pid = int(open(pid_file).read())
                 os.remove(pid_file)
@@ -49,12 +49,12 @@ if __name__ == '__main__':
                 except:
                     pass
             try:
-                p = subprocess.Popen(['python3', 'nevertrump-server.py'])
+                p = subprocess.Popen(['python3', 'wizardfacts-server.py'])
                 open(pid_file, 'w').write(str(p.pid))
             except subprocess.CalledProcessError:
-                raise ValueError("error starting nevertrump-server.py daemon")
+                raise ValueError("error starting wizardfacts-server.py daemon")
         else:
-            print("nevertrump server running...")
-            app.run(host='0.0.0.0', port=5004)
+            print("Wizardfacts server running...")
+            app.run(host='0.0.0.0', port=5003)
 
     run()
