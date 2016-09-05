@@ -1,0 +1,22 @@
+info:
+  title: "Wizard Facts"
+  description: "Interesting facts about J.K. Rowling's Harry Potter series (an unauthorized collection)."
+  x-21-quick-buy: '21 buy http://10.244.44.99:5003/buy'
+  x-21-category: entertainment
+  x-21-app-image:
+  x-21-total-price:
+    min: 2750
+    max: 2750
+  x-21-keywords:
+   - movies
+   - entertainment
+   - trivia
+   - fiction
+  contact:
+    name: Fred Zimmerman        
+    email: fred@pagekicker.com
+host: 10.244.44.99:5003
+schemes:
+  - http
+basePath: /
+x-21-manifest-path: /manifest
