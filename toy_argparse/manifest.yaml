@@ -1,0 +1,38 @@
+basePath: /
+definitions:
+  Server:
+    properties:
+      city: {type: string}
+      provider: {type: string}
+      public_ip: {type: string}
+      state: {type: string}
+      zip_code: {type: string}
+    type: object
+host: 10.244.44.99:6003
+info:
+  contact: {email: fred@pagekicker.com, name: PageKicker}
+  description: Run a fortune on demand for bitcoin.
+  title: fortunefile
+  x-21-category: entertainment
+  x-21-keywords: [fortune, literature]
+  x-21-quick-buy: $ 21 buy url http://<ZEROTIER IP>:6003/fortunefile=riddles
+  x-21-total-price: {max: 2750, min: 2750}
+paths:
+  /:
+    get:
+      consumes: [application/x-www-form-urlencoded]
+      produces: [application/json]
+      responses:
+        '200':
+          description: Ping statistics and information on server location.
+          schema:
+            properties:
+              ping:
+                items: {type: string}
+                type: array
+              server: {$ref: '#/definitions/Server'}
+            type: object
+      summary: Return ping statistics between this device and a given domain or IP.
+schemes: [http]
+swagger: '2.0'
+x-21-manifest-path: /manifest

@@ -16,7 +16,7 @@ def has_fortune():
     return True
 
 
-def ping21(uri, num_packets=3, packet_size=64, wait_timeout=3.0):
+def fortune(fortunefile):
     """ runs fortune against fortunefile
 
     Args:
@@ -44,5 +44,5 @@ def ping21(uri, num_packets=3, packet_size=64, wait_timeout=3.0):
 if __name__ == '__main__':
 
     fortunefile = sys.argv[1]
-    data = ping21(fortunefile)
+    data = fortune(fortunefile)
 
