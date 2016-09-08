@@ -15,14 +15,14 @@ from two1.bitrequests import BitTransferRequests
 wallet = Wallet()
 requests = BitTransferRequests(wallet)
 
-server_url = "http://127.0.0.1:5005"
+server_url = "http://0.0.0.0:5005"
 
-def send_fortunefiles(fortunefile1):
-    fortune_url = server_url + '/fortune?fortunefile1={0}'
-    fortune = requests.get(url=fortune_url.format(fortunefile1))
-    return fortune
+def buy_fortune():
+
+   url = server_url+'/buy?payout_address={0}'
+   response = requests.get(url=url.format(wallet.get_payout_address()))
+   print(response.text)
 
 if __name__ == '__main__':
-    fortunefile1 = sys.argv[1]
-    fortunefile2 = sys.argv[2]
-    send_fortunefiles(fortunefile1)
+
+    buy_fortune()

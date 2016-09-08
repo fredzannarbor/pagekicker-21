@@ -8,7 +8,6 @@ import subprocess
 
 from flask import Flask
 from flask import request
-
 from two1.wallet import Wallet
 from two1.bitserv.flask import Payment
 import sys
@@ -18,21 +17,14 @@ app = Flask(__name__)
 wallet = Wallet()
 payment = Payment(app, wallet)
 
-#@app.route('/fortune')
-#@payment.required(3000)
+@app.route('/buy')
+@payment.required(3000)
+def buy_fortune():
 
-def fortune(fortunefile1):
-
-    #fortunefile1 = str(request.args.get('fortunefile1'))
-    #fortunefile2 = str(request.args.get('fortunefile2'))
-    result = subprocess.check_output(['fortune', fortunefile1]).decode('utf-8')
-    print(result)
+    fortune = subprocess.check_output(['fortune', 'riddles'])
     return fortune
 
 # Initialize and run the server
 if __name__ == '__main__':
-    fortunefile1 = sys.argv[1]
-    fortunefile2 = sys.argv[2]
-    fortune(fortunefile1)
 
     app.run(host='0.0.0.0', port=5005, debug=True)
