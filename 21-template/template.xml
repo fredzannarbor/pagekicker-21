@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+	<template category="Own Templates">
+		<name>21 image template</name>
+		<file>Document-1.sla</file>
+		<tnail>21 image templatetn.png</tnail>
+		<img>21 image template.png</img>
+		<psize>custom, 1024x1024</psize>
+		<color></color>
+		<descr></descr>
+		<usage></usage>
+		<scribus_version>1.4.6</scribus_version>
+		<date>2016-09-03</date>
+		<author></author>
+		<email></email>
+	</template>
+</templates>
