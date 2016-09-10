@@ -1,22 +1,75 @@
-info:
-  title: "Wizard Facts"
-  description: "Interesting facts about J.K. Rowling's Harry Potter series (an unauthorized collection)."
-  x-21-quick-buy: '21 buy http://10.244.44.99:5003/buy'
-  x-21-category: entertainment
-  x-21-app-image:
-  x-21-total-price:
-    min: 2750
-    max: 2750
-  x-21-keywords:
-   - movies
-   - entertainment
-   - trivia
-   - fiction
-  contact:
-    name: Fred Zimmerman        
-    email: fred@pagekicker.com
-host: 10.244.44.99:5003
-schemes:
-  - http
 basePath: /
+definitions:
+  InvalidInput:
+    properties:
+      error:
+        type: string
+    type: object
+  ProcessingError:
+    properties:
+      error:
+        type: string
+    type: object
+
+host: 10.244.44.99
+info:
+  contact:
+    name: Fred Zimmerman
+    email: fred@PageKicker.com
+    url: https://www.PageKicker.com
+  description: Provides user with fortune drawn from one oft two different fortune files.
+  license:
+    name: PageKicker Terms of Use
+    url: http://www.pagekicker.com/index.php/terms-conditions
+  termsOfService: http://www.pagekicker.com/index.php/terms-conditions
+  title: Two-Faced Fortunes
+  version: '0.5.1'
+  x-21-app-image: 
+  x-21-category: entertainment
+  x-21-github-profile-url: ''
+  x-21-github-project-url: ''
+  x-21-keywords:
+  - humor
+  - jokes
+  - sentiment
+  - entertainment
+  - literature
+  - fiction
+  x-21-quick-buy: '$ 21 buy https://10.244.44.99:5006/buy 
+    --data ''{"key1": "riddles", "key2": "literature}'' 
+    '
+  x-21-total-price:
+    max: 2750
+    min: 2750
+parameters:
+  htmlParam:
+    description: html
+    in: body
+    name: html
+    required: true
+    schema:
+      properties:
+        html:
+          type: string
+  textParam:
+    description: text
+    in: body
+    name: text
+    required: true
+    schema:
+      properties:
+        text:
+          type: string
+  urlParam:
+    description: url
+    in: body
+    name: url
+    required: true
+    schema:
+      properties:
+        url:
+          type: string
+schemes:
+- https
+swagger: '2.0'
 x-21-manifest-path: /manifest
