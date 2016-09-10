@@ -26,7 +26,7 @@ print('arg recd from cli is ' + payload)
 wallet = Wallet()
 requests = BitTransferRequests(wallet)
 
-server_url = "http://0.0.0.0:5005"
+server_url = "http://0.0.0.0:5006"
 
 def buy_fortune(key1,key2):
 
