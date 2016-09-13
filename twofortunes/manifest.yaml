@@ -17,12 +17,12 @@ info:
     name: Fred Zimmerman
     email: fred@PageKicker.com
     url: https://www.PageKicker.com
-  description: Provides user with fortune drawn from one oft two different fortune files.
+  description: Implementation of fortune with unmatched collection of fortune files.
   license:
     name: PageKicker Terms of Use
     url: http://www.pagekicker.com/index.php/terms-conditions
   termsOfService: http://www.pagekicker.com/index.php/terms-conditions
-  title: Two-Faced Fortunes
+  title: Fortunes-as-a-Service (FaaS)
   version: '0.5.1'
   x-21-app-image: 
   x-21-category: entertainment
@@ -35,9 +35,21 @@ info:
   - entertainment
   - literature
   - fiction
-  x-21-quick-buy: '$ 21 buy https://10.244.44.99:5006/buy 
-    --data ''{"key1": "riddles", "key2": "literature}'' 
-    '
+  x-21-usage: 'To modify the riddles that are called, change the values for key1 and key2 as provided in the quick buy URL.
+
+Fortunes available include:
+* fortunes (default)
+* chinese (also song100, tang300)
+* literature
+* nevertrump
+* perl
+* pets
+* riddles
+* thebigbangtheory
+* wizardfacts
+
+'
+  x-21-quick-buy: '$ 21 buy "https://10.244.44.99:5006/fortune?key1=riddles&key2=literature"'
   x-21-total-price:
     max: 2750
     min: 2750
