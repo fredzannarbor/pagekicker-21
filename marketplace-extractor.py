@@ -22,3 +22,11 @@ for title in titles:
 sources=soup.findAll('a',{"data-keyword":True})
 for source in sources:
     print(source['data-keyword'])
+
+titles = soup.find_all('a', attrs={'class':'data-market-project-url'})
+for title in titles:
+    print(title.string)
+
+
+#for link in soup.find_all('a'):
+ #   print(link.get('href'))

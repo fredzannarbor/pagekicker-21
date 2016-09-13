@@ -1,45 +1,31 @@
-#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Wed Sep  7 19:06:53 2016
+Created on Wed Sep  7 18:44:35 2016
 
 @author: fred
 """
-
-
+import subprocess
+from flask import Flask
+from flask import request
 from two1.wallet import Wallet
-from two1.bitrequests import BitTransferRequests
-import sys
+from two1.bitserv.flask import Payment
 
-import argparse
-import ast
-
-parser = argparse.ArgumentParser()
-parser.add_argument('--data', help = "string parameters")
-
-args = parser.parse_args()
-
-payload = args.data
-print('arg recd from cli is ' + payload)
-
-# Configure your Bitcoin wallet.
+# Configure the app and wallet
+app = Flask(__name__)
 wallet = Wallet()
-requests = BitTransferRequests(wallet)
+payment = Payment(app, wallet)
 
-server_url = "http://0.0.0.0:5006"
+@app.route('/fortune', methods=['GET', 'POST'])
+@payment.required(3000)
+def buy_fortune():
 
-def buy_fortune(key1,key2):
+    key1 = str(request.args.get('key1'))
+    key2 = str(request.args.get('key2'))
+    print('keys are' + ' ' + key1 + ' ' +key2)
+    fortune = subprocess.check_output(['fortune', key1, key2])
+    return fortune
 
-   url = server_url+'/buy?payout_address={0}'
-   response = requests.get(url=url.format(wallet.get_payout_address()), params=payload)
-   print(response.url) #debug
-   print(response.text)
-
+# Initialize and run the server
 if __name__ == '__main__':
 
-    payload = ast.literal_eval(payload)
-    #print(payload)
-    key1 = payload["key1"]
-    key2 = payload["key2"]
-    print(key1, ' ', key2)
-    buy_fortune(key1, key2)
+    app.run(host='0.0.0.0', port=5006)

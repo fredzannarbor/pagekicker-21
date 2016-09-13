@@ -15,7 +15,7 @@ app = Flask(__name__)
 wallet = Wallet()
 payment = Payment(app, wallet)
 
-@app.route('/buy', methods=['GET', 'POST'])
+@app.route('/fortune', methods=['GET', 'POST'])
 @payment.required(3000)
 def buy_fortune():
 
