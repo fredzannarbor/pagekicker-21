@@ -39,9 +39,14 @@ info:
 
 Fortunes available include:
 * fortunes (default)
+* aphorisms
+* bashdefs
 * chinese (also song100, tang300)
+* freebsd
+* kernel-newbies
 * literature
 * nevertrump
+* openbsd
 * perl
 * pets
 * riddles
