@@ -13,4 +13,5 @@ bitnodes/
 bitroute/
 diving/
 scr/
-
+*.pid
+*~
