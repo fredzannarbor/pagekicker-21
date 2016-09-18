@@ -54,5 +54,5 @@ if __name__ == '__main__':
                     raise ValueError("error starting twofortunesserver.py daemon")
             else:
                 print("twofortunes-server running...")
-                app.run(host='0.0.0.0', port=5006)
+                app.run(host='::', port=5006)
    run()
