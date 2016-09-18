@@ -11,7 +11,7 @@ definitions:
 host: '[fcce:a977:eef0:ac6d:2715:0000:0000:0001]:5006'
 info:
   contact: {email: fred@PageKicker.com, name: Fred Zimmerman, url: 'https://www.PageKicker.com'}
-  description: Superior implementation of fortune with unmatched fortune files.
+  description: Superior implementation of Unix fortune with 75+ databases.
   license: {name: PageKicker Terms of Use, url: 'http://www.pagekicker.com/index.php/terms-conditions'}
   termsOfService: http://www.pagekicker.com/index.php/terms-conditions
   title: Superior Fortune
