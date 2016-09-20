@@ -23,15 +23,6 @@ def buy_yoda():
     yoda = subprocess.check_output(['perl', 'yoda2.pl', sentence])
     return yoda
 
-@app.route('/manifest')
-def docs():
-    '''
-    Serves the app manifest to the 21 crawler.
-    '''
-    with open('manifest.yaml', 'r') as f:
-        manifest_yaml = yaml.load(f)
-    return json.dumps(manifest_yaml)
-
 if __name__ == '__main__':
     import click
 
@@ -56,6 +47,6 @@ if __name__ == '__main__':
                 raise ValueError("error starting yoda-server.py daemon")
         else:
             print("Server running...")
-            app.run(host='0.0.0.0', port=5001)
+            app.run(host='::', port=5001)
 
     run()
