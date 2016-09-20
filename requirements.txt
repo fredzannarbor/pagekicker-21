@@ -20,6 +20,7 @@ mccabe==0.5.2
 mnemonic==0.13
 path.py==8.2.1
 pbkdf2==1.3
+pbr==1.10.0
 pexpect==4.2.1
 protobuf==3.0.0a3
 psutil==4.3.0
@@ -34,8 +35,12 @@ python-dateutil==2.5.3
 requests==2.11.1
 sha256==0.1
 six==1.10.0
+stevedore==1.17.1
 tabulate==0.7.5
 two1==3.9.1
+virtualenv==15.0.3
+virtualenv-clone==0.2.6
+virtualenvwrapper==4.7.2
 watson-developer-cloud==0.18.0
 websocket-client==0.37.0
 wikipedia==1.4.0
