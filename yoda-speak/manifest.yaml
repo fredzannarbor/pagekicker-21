@@ -1,21 +1,14 @@
-info:
-  title: "Yoda Speaks"
-  description: "Submit a sentence, return it will in Yoda speak."
-  x-21-quick-buy: '21 buy http://10.244.44.99:5001/buy?sentence="These fish are tasty."'
-  x-21-category: entertainment
-  x-21-app-image: https://cdn.filepicker.io/api/file/csmHaVJESA6rlwYwP1tq
-  x-21-total-price:
-    min: 2750
-    max: 2750
-  x-21-keywords:
-   - movies
-   - Star Wars
-   - jokes
-  contact:
-    name: PageKicker      
-    email: fred@pagekicker.com
-host: http://10.244.44.99:5001
-schemes:
-  - http
 basePath: /
+host: '[fcce:a977:eef0:ac6d:2715:0000:0000:0001]:5001'
+info:
+  contact: {email: fred@pagekicker.com, name: PageKicker}
+  description: Submit a sentence, return it will in Yoda speak.
+  title: Yoda Speaks
+  x-21-app-image: https://cdn.filepicker.io/api/file/csmHaVJESA6rlwYwP1tq
+  x-21-category: entertainment
+  x-21-keywords: [movies, Star Wars, jokes]
+  x-21-quick-buy: 21 buy [fcce:a977:eef0:ac6d:2715:0000:0000:0001]:5001/buy?sentence="These
+    fish are tasty."
+  x-21-total-price: {max: 2750, min: 2750}
+schemes: [http]
 x-21-manifest-path: /manifest
