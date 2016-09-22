@@ -11,20 +11,21 @@ definitions:
 host: '[fcce:a977:eef0:ac6d:2715:0000:0000:0001]:5004'
 info:
   contact: {email: fred@PageKicker.com, name: Fred Zimmerman, url: 'https://www.PageKicker.com'}
-  description: 'A NeverTrump quote with every API call.'
+  description: Every API call returns a quote reminding your users why they should
+    never, ever vote for Donald Trump.
   license: {name: PageKicker Terms of Use, url: 'http://www.pagekicker.com/index.php/terms-conditions'}
   termsOfService: http://www.pagekicker.com/index.php/terms-conditions
   title: NeverTrump
   version: 0.7.2
-  x-21-app-image: null
+  x-21-app-image: https://cdn.filepicker.io/api/file/g9MXNe9ZRmaJstBfXFrr
   x-21-category: entertainment
   x-21-github-profile-url: ''
   x-21-github-project-url: ''
   x-21-keywords: [humor, jokes, sentiment, politics]
-  x-21-quick-buy: $ 21 buy "https://[fcce:a977:eef0:ac6d:2715:0000:0000:0001]:5004/buy"
+  x-21-quick-buy: $ 21 buy "http://[fcce:a977:eef0:ac6d:2715:0000:0000:0001]:5004/buy"
   x-21-total-price: {max: 2750, min: 2750}
-  x-21-usage: '
-    '
+  x-21-usage: Randomly selects from a database of more than 500 egregious acts and
+    aphorisms.
 parameters:
   htmlParam:
     description: html
