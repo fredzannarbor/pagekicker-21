@@ -1,11 +1,9 @@
 #!/usr/bin/env python3
 
 import subprocess
-import json
-import yaml
 from flask import Flask
 import os
-
+import psutil
 
 from two1.wallet import Wallet
 from two1.bitserv.flask import Payment
@@ -16,20 +14,11 @@ payment = Payment(app, wallet)
 
 # machine-payable endpoint that returns fortune if payment made
 @app.route('/buy')
-@payment.required(2000)
+@payment.required(2750)
 def buy_fortune():
 
     fortune = subprocess.check_output(['fortune', 'nevertrump'])
     return fortune
-
-@app.route('/manifest')
-def docs():
-    '''
-    Serves the app manifest to the 21 crawler.
-    '''
-    with open('manifest.yaml', 'r') as f:
-        manifest_yaml = yaml.load(f)
-    return json.dumps(manifest_yaml)
 
 if __name__ == '__main__':
     import click
@@ -55,6 +44,6 @@ if __name__ == '__main__':
                 raise ValueError("error starting nevertrump-server.py daemon")
         else:
             print("nevertrump server running...")
-            app.run(host='0.0.0.0', port=5004)
+            app.run(host='::', port=5004)
 
     run()
