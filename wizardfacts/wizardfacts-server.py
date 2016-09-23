@@ -16,7 +16,7 @@ payment = Payment(app, wallet)
 
 # machine-payable endpoint that returns fortune if payment made
 @app.route('/buy')
-@payment.required(1000)
+@payment.required(2750)
 def buy_fortune():
 
     fortune = subprocess.check_output(['fortune', 'wizardfacts'])
@@ -55,6 +55,6 @@ if __name__ == '__main__':
                 raise ValueError("error starting wizardfacts-server.py daemon")
         else:
             print("Wizardfacts server running...")
-            app.run(host='0.0.0.0', port=5003)
+            app.run(host='::', port=5003)
 
     run()
