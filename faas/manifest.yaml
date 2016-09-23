@@ -15,8 +15,8 @@ info:
   license: {name: PageKicker Terms of Use, url: 'http://www.pagekicker.com/index.php/terms-conditions'}
   termsOfService: http://www.pagekicker.com/index.php/terms-conditions
   title: Superior Fortune
-  version: 0.7.1
-  x-21-app-image: null
+  version: 0.7.4
+  x-21-app-image: https://cdn.filepicker.io/api/file/6aRuNUQLTOqtq3lbX6sA
   x-21-category: entertainment
   x-21-github-profile-url: ''
   x-21-github-project-url: ''
