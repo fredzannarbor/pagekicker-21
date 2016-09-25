@@ -2,10 +2,8 @@
 
 import os
 import subprocess
-import yaml
-import json
 from flask import Flask, request
-
+import psutil
 from two1.wallet import Wallet
 from two1.bitserv.flask import Payment
 
@@ -19,8 +17,8 @@ payment = Payment(app, wallet)
 
 def buy_yoda():
 
-    sentence = request.args.get('sentence')
-    yoda = subprocess.check_output(['perl', 'yoda2.pl', sentence])
+    key1 = str(request.args.get('key1'))
+    yoda = subprocess.check_output(['perl', 'yoda2.pl', key1])
     return yoda
 
 if __name__ == '__main__':
