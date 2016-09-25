@@ -1,5 +1,9 @@
 #!/bin/bash
 # test buys using 21 network
-21 buy http://10.244.44.99:5004/buy #nevertrump
-21 buy http://10.244.44.99:5001/buy?sentence="These fish are tasty." #yoda
-21 buy http://10.244.44.99:5003/buy # wizardfacts
+#21 buy http://10.244.44.99:5001/buy?sentence="These fish are tasty." #yoda
+21 buy "https://mkt.21.co/pagekicker/wizard-facts-burnt_sienna/buy"
+sleep 3
+21 buy "https://mkt.21.co/pagekicker/nevertrump/buy"
+sleep 3
+21 buy "http://[fcce:a977:eef0:ac6d:2715:0000:0000:0001]:5006/fortune?key1=riddles&key2=literature"
+
