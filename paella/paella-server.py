@@ -21,7 +21,10 @@ payment = Payment(app, wallet)
 @payment.required(10000)
 def buy_paella():
 
-    paella = subprocess.check_call('/home/fred/pagekicker-community/test/paella-build.sh', cwd='/home/fred/pagekicker-community/scripts')
+    key1 = str(request.args.get('key1'))
+    command =  ['/home/fred/pagekicker-community/test/paella-build.sh', key1]
+    paella = subprocess.check_call(command, cwd='/home/fred/pagekicker-community/scripts')
+    paella = 'exiting with status ' + str(paella)
     return paella
 
 # Initialize and run the server
