@@ -14,7 +14,10 @@ bitroute/
 diving/
 scr/
 *.pid
+*.ini
 *~
 phrase2ebook/config.ini
 bitcoin-instagram/
 *.autosave
+.spyderworkspace/
+
