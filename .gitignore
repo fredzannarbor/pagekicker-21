@@ -14,5 +14,9 @@ bitroute/
 diving/
 scr/
 *.pid
+*.ini
 *~
-*.sla.autosave
+phrase2ebook/config.ini
+bitcoin-instagram/
+*.autosave
+.spyderworkspace
