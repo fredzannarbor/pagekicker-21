@@ -6,12 +6,11 @@ sleep 10
 echo "testing nevertrump"
 21 buy "https://mkt.21.co/pagekicker/nevertrump/buy"
 sleep 10
-echo "testing superiorfortune"
-21 buy "http://[fcce:a977:eef0:ac6d:2715:0000:0000:0001]:5006/fortune?key1=riddles&key2=literature"
-sleep 10
-echo "testing yodaspeaks"
-21 buy "http://[fcce:a977:eef0:ac6d:2715:0000:0000:0001]:5001/buy?key1=The+force+is+strong+in+this+one."
-sleep 10
+#echo "testing superiorfortune"
+#21 buy "http://[fcce:a977:eef0:ac6d:2715:0000:0000:0001]:5006/fortune?key1=riddles&key2=literature"
+#sleep 10
+#echo "testing yodaspeaks"
+#21 buy "http://[fcce:a977:eef0:ac6d:2715:0000:0000:0001]:5001/buy?key1=The+force+is+strong+in+this+one."
+#sleep 10
 echo "testing phrase2ebook"
-21 buy "http://[fcce:a977:eef0:ac6d:2715:0000:0000:0001]:5009/bookbuild?key1=Neil+Armstrong" > ~/myneilarmstrongbook.epub
-ls -lart ~/myneilarmstrongbook.epub
+21 buy "pagekicker/phrase2ebook-sky-blue/bookbuild?key1=Tom+Selleck" > TomSelleck.epub
