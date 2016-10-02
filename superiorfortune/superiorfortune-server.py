@@ -38,7 +38,7 @@ if __name__ == '__main__':
 
    def run(daemon):
             if daemon:
-                pid_file = './twofortunes.pid'
+                pid_file = './superiorfortune.pid'
                 if os.path.isfile(pid_file):
                     pid = int(open(pid_file).read())
                     os.remove(pid_file)
@@ -48,11 +48,11 @@ if __name__ == '__main__':
                     except:
                         pass
                 try:
-                    p = subprocess.Popen(['python3', 'twofortunes-server.py'])
+                    p = subprocess.Popen(['python3', 'superiorfortune-server.py'])
                     open(pid_file, 'w').write(str(p.pid))
                 except subprocess.CalledProcessError:
-                    raise ValueError("error starting twofortunesserver.py daemon")
+                    raise ValueError("error starting superiorfortune-server.py daemon")
             else:
-                print("twofortunes-server running...")
+                print("superiorfortune server running...")
                 app.run(host='::', port=5006)
    run()
