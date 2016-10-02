@@ -2,7 +2,7 @@
 # make sure they are open on cloud provider
 # currently port assignment is done manually in the last line of *server.py
 5000
-5001
+5001 #yoda-speaks
 5002
 5003 #fortune/pk21server.py
 5004 # nevertrump
@@ -11,6 +11,7 @@
 5007 # superiorfortune
 5008 # phrase2book
 5009 # paella test
+5010 # termpaperfactory
 6002
 6016
 7016
@@ -18,5 +19,5 @@
 9016 #TranscodeE16/transcode-server.py
 10016
 11016
-# this is IPv6 address for PageKicker
-cce:a977:eef0:ac6d:2715:0000:0000:0001
+# this is IPv6 address for PageKicker on 21.co/mkt
+fcce:a977:eef0:ac6d:2715:0000:0000:0001

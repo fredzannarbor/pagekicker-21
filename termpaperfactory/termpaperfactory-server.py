@@ -7,7 +7,15 @@ Created on Wed Sep  7 18:44:35 2016
 import subprocess
 import os
 import psutil
-from flask import Flask, request
+from flask import Flask, request, send_from_directory, send_file
+import configparser
+config = configparser.ConfigParser()
+config.read("config.ini")
+commandpath = config.get("Paths", "commandpath")
+mycwd = config.get("Paths", "mycwd")
+print('local commandpath and working directory are ' + commandpath, mycwd)
+
+
 from two1.wallet import Wallet
 from two1.bitserv.flask import Payment
 
@@ -16,14 +24,17 @@ app = Flask(__name__)
 wallet = Wallet()
 payment = Payment(app, wallet)
 
-@app.route('/bookbuild', methods=['GET', 'POST'])
+@app.route('/buildtermpaper', methods=['GET', 'POST'])
 @payment.required(10000)
-def book_build():
+def buy_buildtermpaper():
 
-    singleseed = str(request.args.get('singleseed'))
-    print('singleseed is' + singleseed)
-    book_build = subprocess.check_output(['/home/fred/pagekicker-community/scripts/bin/create-catalog-entry.sh', '--singleseed', singleseed])
-    return book_build
+    key1 = str(request.args.get('key1'))
+    command =  [ commandpath, key1]
+    status = subprocess.check_call(command, cwd = mycwd)
+    status = ('exiting with status ' + str(status))
+    # print(status)
+    return send_from_directory('/tmp/pagekicker/', 'delivery.docx')
+
 
 # Initialize and run the server
 if __name__ == '__main__':
@@ -36,7 +47,7 @@ if __name__ == '__main__':
 
    def run(daemon):
             if daemon:
-                pid_file = './twofortunes.pid'
+                pid_file = './termpaperfactory.pid'
                 if os.path.isfile(pid_file):
                     pid = int(open(pid_file).read())
                     os.remove(pid_file)
@@ -46,11 +57,11 @@ if __name__ == '__main__':
                     except:
                         pass
                 try:
-                    p = subprocess.Popen(['python3', 'phrase2book-server.py'])
+                    p = subprocess.Popen(['python3', 'termpaperfactory-server.py'])
                     open(pid_file, 'w').write(str(p.pid))
                 except subprocess.CalledProcessError:
-                    raise ValueError("error starting phrase2book daemon")
+                    raise ValueError("error starting termpaperfactory-server.py daemon")
             else:
-                print("phrase2book-server running...")
-                app.run(host='::', port=5008, debug=True)
+                print("termpaperfactory running on port 5010...")
+                app.run(host='::', port=5010, debug=True)
    run()
