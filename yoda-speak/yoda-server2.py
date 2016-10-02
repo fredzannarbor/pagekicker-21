@@ -39,10 +39,10 @@ if __name__ == '__main__':
                 except:
                     pass
             try:
-                p = subprocess.Popen(['python3', 'yoda-server.py'])
+                p = subprocess.Popen(['python3', 'yoda-server2.py'])
                 open(pid_file, 'w').write(str(p.pid))
             except subprocess.CalledProcessError:
-                raise ValueError("error starting yoda-server.py daemon")
+                raise ValueError("error starting yoda-server2.py daemon")
         else:
             print("Server running...")
             app.run(host='::', port=5001)
