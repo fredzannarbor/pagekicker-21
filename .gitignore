@@ -1,3 +1,6 @@
+yoda-speak/yoda.pid
+.spyderworkspace/
+/*.pid
 DnsE16/
 ping21/
 SpeedE16/
@@ -20,3 +23,4 @@ phrase2ebook/config.ini
 bitcoin-instagram/
 *.autosave
 .spyderworkspace
+toy_argparse/.spyderproject
