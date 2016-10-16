@@ -12,8 +12,12 @@ ElasticsearchE16/
 bitcoin-linux/
 bitnodes/
 bitroute/
+bitcoin-sms-server
 diving/
+wifiportal21/
+newsstand/
 scr/
+epub-reader/
 *.pid
 *.ini
 *~
