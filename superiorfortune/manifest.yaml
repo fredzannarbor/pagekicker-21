@@ -16,13 +16,13 @@ info:
   license: {name: PageKicker Terms of Use, url: 'http://www.pagekicker.com/index.php/terms-conditions'}
   termsOfService: http://www.pagekicker.com/index.php/terms-conditions
   title: Superior Fortune
-  version: 0.8.1
+  version: 0.9.1.3
   x-21-app-image: https://cdn.filepicker.io/api/file/6aRuNUQLTOqtq3lbX6sA
   x-21-category: entertainment
   x-21-github-profile-url: ''
   x-21-github-project-url: ''
   x-21-keywords: [humor, jokes, sentiment, entertainment, literature, fiction]
-  x-21-quick-buy: $ 21 buy "https://[fcce:a977:eef0:ac6d:2715:0000:0000:0001]:5006/fortune?key1=riddles&key2=literature"
+  x-21-quick-buy: $ 21 buy 'pagekicker/superior-fortune-shamrock/fortune?key1=riddles&key2=literature'
   x-21-total-price: {max: 2750, min: 2750}
   x-21-usage: 'To modify the riddles that are called, change the values for key1 and
     key2 as provided in the quick buy URL.
