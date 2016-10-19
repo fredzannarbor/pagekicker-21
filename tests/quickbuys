@@ -14,4 +14,6 @@ echo "testing yodaspeaks"
 sleep 10
 echo "testing phrase2ebook"
 21 buy "pagekicker/phrase2ebook-sky-blue/bookbuild?key1=Tom+Selleck" > TomSelleck.epub
-
+sleep 10
+echo "testing howdoi21"
+21 buy "pagekicker/howdoi21/howdoi?options=get+bitcoin+historical+results"
